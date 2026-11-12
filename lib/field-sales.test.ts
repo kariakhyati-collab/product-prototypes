@@ -89,7 +89,7 @@ describe("collections", () => {
 describe("dayProgress", () => {
   it("counts visits and caps the percentage", () => {
     expect(dayProgress(["visited", "planned", "in_visit"], 3_000_000, 6_000_000)).toEqual({
-      visited: 1, total: 3, achievedPaise: 3_000_000, targetPaise: 6_000_000, pct: 50,
+      visited: 2, total: 3, achievedPaise: 3_000_000, targetPaise: 6_000_000, pct: 50,
     });
     expect(dayProgress([], 9_000_000, 6_000_000).pct).toBe(100);
   });

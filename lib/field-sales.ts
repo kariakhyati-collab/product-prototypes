@@ -197,9 +197,10 @@ export interface DayProgress {
   pct: number;
 }
 
+/** A shop counts as visited once the rep has checked in ("in_visit" or "visited"). */
 export function dayProgress(statuses: string[], achievedPaise: number, targetPaise: number): DayProgress {
   return {
-    visited: statuses.filter((s) => s === "visited").length,
+    visited: statuses.filter((s) => s === "visited" || s === "in_visit").length,
     total: statuses.length,
     achievedPaise,
     targetPaise,
